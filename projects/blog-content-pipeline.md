@@ -9,21 +9,19 @@
 
 전체 Pileline은 5개 Phase로 구성됩니다.
 
-Phase 1. Setting: [[persona|Persona]], [[content-meta|Content Meta]], Document
-Phase 2. Generate: [[generate-outline|Outline]]
-Phase 3. Generate: [[generate-background|Background]]
-Phase 4. Generate: [[generate-content|Content]]
-Phase 5. Generate: [[generate-image|Main Image]]
+Phase 1. Setting: Persona, Content Meta, Document
+Phase 2. Generate: Outline
+Phase 3. Generate: Background
+Phase 4. Generate: Content
+Phase 5. Generate: Main Image
 
 
 ---
 
 ## 참고 
-- [[funnel|Funnel 전략]]
+- [Funnel 전략](https://github.com/lemoncloud-io/eureka-blog/blob/docs/blog/resources/references/funnel.md)
 
 ---
 
-![[generate-content.png]]
-
-
-![[contents-funnel.png]]
+![contents-funnel](https://github.com/lemoncloud-io/eureka-blog/blob/docs/blog/resources/assets/contents-funnel.png)
+![generate-content.png](https://github.com/lemoncloud-io/eureka-blog/blob/docs/blog/resources/assets/generate-content.png)
