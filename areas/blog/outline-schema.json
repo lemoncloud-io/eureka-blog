@@ -1,0 +1,232 @@
+{
+  "type": "OBJECT",
+  "properties": {
+    "keyword": {
+      "type": "STRING"
+    },
+    "meta": {
+      "type": "OBJECT",
+      "properties": {
+        "channel": {
+          "type": "STRING"
+        },
+        "category": {
+          "type": "STRING"
+        },
+        "date": {
+          "type": "STRING"
+        },
+        "tag": {
+          "type": "ARRAY",
+          "items": {
+            "type": "STRING"
+          }
+        }
+      },
+      "required": [
+        "channel",
+        "category",
+        "date",
+        "tag"
+      ]
+    },
+    "outline": {
+      "type": "OBJECT",
+      "properties": {
+        "title": {
+          "type": "OBJECT",
+          "properties": {
+            "content": {
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "content"
+          ]
+        },
+        "intro": {
+          "type": "OBJECT",
+          "properties": {
+            "length": {
+              "type": "NUMBER"
+            },
+            "content": {
+              "type": "ARRAY",
+              "items": {
+                "type": "STRING"
+              }
+            }
+          },
+          "required": [
+            "length",
+            "content"
+          ]
+        },
+        "section": {
+          "type": "ARRAY",
+          "items": {
+            "type": "OBJECT",
+            "properties": {
+              "structureType": {
+                "type": "STRING"
+              },
+              "title": {
+                "type": "STRING"
+              },
+              "length": {
+                "type": "NUMBER"
+              },
+              "content": {
+                "type": "ARRAY",
+                "items": {
+                  "type": "STRING"
+                }
+              },
+              "table": {
+                "type": "OBJECT",
+                "properties": {
+                  "title": {
+                    "type": "STRING"
+                  },
+                  "headers": {
+                    "type": "ARRAY",
+                    "items": {
+                      "type": "STRING"
+                    }
+                  },
+                  "requiredEntities": {
+                    "type": "ARRAY",
+                    "items": {
+                      "type": "STRING"
+                    }
+                  },
+                  "rows": {
+                    "type": "ARRAY",
+                    "items": {
+                      "type": "ARRAY",
+                      "items": {
+                        "type": "STRING"
+                      }
+                    }
+                  }
+                }
+              },
+              "h3": {
+                "type": "ARRAY",
+                "items": {
+                  "type": "OBJECT",
+                  "properties": {
+                    "title": {
+                      "type": "STRING"
+                    },
+                    "content": {
+                      "type": "ARRAY",
+                      "items": {
+                        "type": "STRING"
+                      }
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "content"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "structureType",
+              "length",
+              "content"
+            ]
+          }
+        },
+        "faq": {
+          "type": "OBJECT",
+          "properties": {
+            "title": {
+              "type": "STRING"
+            },
+            "length": {
+              "type": "NUMBER"
+            },
+            "content": {
+              "type": "ARRAY",
+              "items": {
+                "type": "STRING"
+              }
+            }
+          },
+          "required": [
+            "title",
+            "length",
+            "content"
+          ]
+        },
+        "conclusion": {
+          "type": "OBJECT",
+          "properties": {
+            "length": {
+              "type": "NUMBER"
+            },
+            "content": {
+              "type": "ARRAY",
+              "items": {
+                "type": "STRING"
+              }
+            },
+            "cta": {
+              "type": "OBJECT",
+              "description": "관련 데이터가 없는 경우 이 필드를 생성하지 마세요.",
+              "properties": {
+                "target": {
+                  "type": "STRING"
+                },
+                "serviceName": {
+                  "type": "STRING"
+                },
+                "link": {
+                  "type": "STRING"
+                },
+                "action": {
+                  "type": "STRING"
+                }
+              }
+            }
+          },
+          "required": [
+            "length",
+            "content"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "intro",
+        "section",
+        "faq",
+        "conclusion"
+      ]
+    },
+    "preValid": {
+      "type": "OBJECT",
+      "properties": {
+        "layoutSize": {
+          "type": "STRING"
+        },
+        "sectionCount": {
+          "type": "NUMBER"
+        }
+      },
+      "required": [
+        "layoutSize",
+        "sectionCount"
+      ]
+    }
+  },
+  "required": [
+    "keyword",
+    "meta",
+    "outline",
+    "preValid"
+  ]
+}

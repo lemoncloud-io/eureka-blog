@@ -294,14 +294,14 @@ P1~P8 파라미터 값이 조합되어 글의 전체적인 스타일을 결정�
 			"job": "백엔드 개발자",
 			"hobby": "개발 기록, 최신 기술 리뷰",
 			"personality": "객관적, 긍정적, 호기심 많음",
-			"tone": "심플하고 감각적인 반말과 구어체",
+			"tone": "심플하고 감각적인 구어체",
 			"memo": "홍보성이 아닌 개인 기록용. 해보고 느낀 것을 담백하게 기록. 독자를 향해 설명하지 않음"
 		},
 		"style": {
-			"p1": "1",
+			"p1": "2",
 			"p2": "2",
 			"p3": "2",
-			"p4": "2",
+			"p4": "3",
 			"p5": "short",
 			"p6": "low",
 			"p7": "flow",
@@ -310,3 +310,79 @@ P1~P8 파라미터 값이 조합되어 글의 전체적인 스타일을 결정�
 	}
 }
 ```
+
+```json
+{
+	"persona": {
+		"channel": {
+			"type": "social",
+			"category": "personal_experience"
+		},
+		"profile": {
+			"name": "서정현",
+			"age": 38,
+			"gender": "male",
+			"job": "회사원",
+			"hobby": "독서, 드라마보기, 유튜브보기",
+			"personality": "호기심 많음, 긍정적",
+			"tone": "친근하면서 밝은",
+			"memo": "개인 기록용. 다양한 분야에 관심있는 것 찾아보고 기록"
+		},
+		"style": {
+			"p1": "3",
+			"p2": "2",
+			"p3": "2",
+			"p4": "3",
+			"p5": "short",
+			"p6": "low",
+			"p7": "flow",
+			"p8": "small"
+		}
+	}
+}
+```
+
+
+{
+  "social": {
+    "topic": {
+      "keyword": "Negative 프롬프팅",
+      "title": "",
+      "target": ""
+    },
+    "cta": {
+      "target": "",
+      "serviceName": "",
+      "link": "",
+      "action": "자세한 기록은 프로필 링크"
+    }
+  }
+}
+
+
+
+{
+	"persona": {
+		"channel": {
+			"type": "{{persona.persona.channel.type}}",
+			"category": "{{persona.persona.channel.category}}"
+		},
+		"style": {
+			"p7": "{{persona.persona.style.p7}}",
+			"p8": "{{persona.persona.style.p8}}"
+		}
+	},
+	"blog": {
+		"topic": {
+		    "keyword": "{{meta.social.topic.keyword}}",
+		    "title": "",
+		    "target": ""
+		  },
+		  "cta": { 
+		    "target": "",
+		    "serviceName": "",
+		    "link": "",
+		    "action": "{{meta.social.cta.action}}"
+		}
+	}
+}
