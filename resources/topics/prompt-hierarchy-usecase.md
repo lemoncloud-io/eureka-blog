@@ -1,11 +1,7 @@
----
-
 # Prompt Hierarchy Usecase
 
 ---
-# Prompt Hierarchy Usecase
 
----
 ## 개요
 
 Prompt Hierarchy는 LLM에 입력되는 지시의 출처와 신뢰 수준에 따라 우선순위 계층을 정의하고, 하위 계층의 지시가 상위 계층의 제약을 위반하거나 우회하지 못하도록 강제하는 프롬프트 아키텍처 프레임워크다.
