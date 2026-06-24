@@ -1,0 +1,27 @@
+{
+  "type": "OBJECT",
+  "properties": {
+    "prompt": {
+      "type": "STRING",
+      "description": "스타일 및 색상 키워드를 포함한 상세한 이미지 생성 한국어 프롬프트"
+    },
+    "concept": {
+      "type": "STRING",
+      "description": "시각적 컨셉에 대한 한 문장 설명"
+    },
+    "image_alt": {
+      "type": "STRING",
+      "description": "SEO 및 AEO에 최적화된 이미지 대체 텍스트"
+    },
+    "image_title": {
+      "type": "STRING",
+      "description": "검색 가시성을 위한 이미지 제목"
+    }
+  },
+  "required": [
+    "prompt",
+    "concept",
+    "image_alt",
+    "image_title"
+  ]
+}

@@ -1,6 +1,6 @@
-# Blog Background
+# Social Background
 
-## Input description
+## Input JSON structure description
 * persona: 페르소나 정보
 	* style: 어조 스타일 정보
 		* p3: 정보밀도
@@ -14,13 +14,19 @@
 			* medium: 업계 종사자 기준. 통용 용어는 설명 없이 사용. 생소한 용어는 괄호 설명 또는 비유 추가.
 			* high: 전문가 기준. 고급 용어 설명 없이 사용. 영문 원어 표기 적극 활용.
 * outline: 생성된 outline JSON  
-* document: keyword로 검색된 정보 (markdown)
+* document: Research Document by keyword
   
 ## Input
 
 ### Persona
 ```json
-{{persona}}
+{
+	"persona": {
+	    "style": {
+			"p3": {{persona.persona.style.p3}},
+		    "p6": "{{persona.persona.style.p6}}"
+	    }
+}
 ```
 
 ### Outline
@@ -31,6 +37,6 @@
 ### Research Document
 ```md
 {{document}}
+
+{{document2}}
 ```
-
-

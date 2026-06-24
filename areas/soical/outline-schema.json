@@ -1,0 +1,268 @@
+{
+  "type": "OBJECT",
+  "properties": {
+    "keyword": {
+      "type": "STRING",
+      "description": "제공된 키워드"
+    },
+    "meta": {
+      "type": "OBJECT",
+      "properties": {
+        "channel": {
+          "type": "STRING",
+          "description": "제공된 channel type"
+        },
+        "category": {
+          "type": "STRING",
+          "description": "제공된 글의 유형"
+        },
+        "date": {
+          "type": "STRING",
+          "description": "제공된 current date"
+        },
+        "tag": {
+          "type": "ARRAY",
+          "items": {
+            "type": "STRING"
+          },
+          "description": "관련 검색 키워드 list by LLM"
+        },
+        "title": {
+          "type": "STRING",
+          "description": "제목 텍스트 (내부 참고용) by LLM"
+        }
+      },
+      "required": [
+        "channel",
+        "category",
+        "date",
+        "tag",
+        "title"
+      ]
+    },
+    "outline": {
+      "type": "OBJECT",
+      "properties": {
+        "threads": {
+          "type": "OBJECT",
+          "description": "threads content outline",
+          "properties": {
+            "hook": {
+              "type": "OBJECT",
+              "description": "스크롤을 멈추게 하는 첫 줄의 문장",
+              "properties": {
+                "length": {
+                  "type": "NUMBER",
+                  "description": "글자 수"
+                },
+                "content": {
+                  "type": "ARRAY",
+                  "items": {
+                    "type": "STRING"
+                  },
+                  "description": "핵심 포인트 list by LLM"
+                }
+              },
+              "required": [
+                "length",
+                "content"
+              ]
+            },
+            "body": {
+              "type": "OBJECT",
+              "description": "핵심 내용",
+              "properties": {
+                "length": {
+                  "type": "NUMBER",
+                  "description": "글자 수"
+                },
+                "content": {
+                  "type": "ARRAY",
+                  "items": {
+                    "type": "STRING"
+                  },
+                  "description": "핵심 포인트 list by LLM"
+                }
+              },
+              "required": [
+                "length",
+                "content"
+              ]
+            },
+            "conclusion": {
+              "type": "OBJECT",
+              "description": "마무리",
+              "properties": {
+                "length": {
+                  "type": "NUMBER",
+                  "description": "글자 수"
+                },
+                "content": {
+                  "type": "ARRAY",
+                  "items": {
+                    "type": "STRING"
+                  },
+                  "description": "핵심 포인트 list by LLM"
+                },
+                "cta": {
+                  "type": "OBJECT",
+                  "description": "Omit it if there is no action.",
+                  "properties": {
+                    "action": {
+                      "type": "STRING"
+                    }
+                  }
+                }
+              },
+              "required": [
+                "length",
+                "content"
+              ]
+            }
+          },
+          "required": [
+            "hook",
+            "body",
+            "conclusion"
+          ]
+        },
+        "instagram": {
+          "type": "OBJECT",
+          "description": "instagram content outline",
+          "properties": {
+            "hook": {
+              "type": "OBJECT",
+              "description": "스크롤을 멈추게 하는 첫 줄의 문장",
+              "properties": {
+                "length": {
+                  "type": "NUMBER",
+                  "description": "글자 수"
+                },
+                "content": {
+                  "type": "ARRAY",
+                  "items": {
+                    "type": "STRING"
+                  },
+                  "description": "핵심 포인트 list by LLM"
+                }
+              },
+              "required": [
+                "length",
+                "content"
+              ]
+            },
+            "body": {
+              "type": "OBJECT",
+              "description": "핵심 내용",
+              "properties": {
+                "length": {
+                  "type": "NUMBER",
+                  "description": "글자 수"
+                },
+                "content": {
+                  "type": "ARRAY",
+                  "items": {
+                    "type": "STRING"
+                  },
+                  "description": "핵심 포인트 list by LLM"
+                }
+              },
+              "required": [
+                "length",
+                "content"
+              ]
+            },
+            "conclusion": {
+              "type": "OBJECT",
+              "description": "마무리",
+              "properties": {
+                "length": {
+                  "type": "NUMBER",
+                  "description": "글자 수"
+                },
+                "content": {
+                  "type": "ARRAY",
+                  "items": {
+                    "type": "STRING"
+                  },
+                  "description": "핵심 포인트 list by LLM"
+                },
+                "cta": {
+                  "type": "OBJECT",
+                  "description": "Omit it if there is no provided action.",
+                  "properties": {
+                    "action": {
+                      "type": "STRING"
+                    }
+                  }
+                }
+              },
+              "required": [
+                "length",
+                "content"
+              ]
+            }
+          },
+          "required": [
+            "hook",
+            "body",
+            "conclusion"
+          ]
+        }
+      },
+      "required": [
+        "threads",
+        "instagram"
+      ]
+    },
+    "preValid": {
+      "type": "OBJECT",
+      "properties": {
+        "threads": {
+          "type": "OBJECT",
+          "properties": {
+            "layoutSize": {
+              "type": "STRING",
+              "description": "value of persona.style.p8 provided"
+            },
+            "slideCount": {
+              "type": "NUMBER",
+              "description": "total count of hook and body and conslusion"
+            }
+          },
+          "required": [
+            "layoutSize",
+            "slideCount"
+          ]
+        },
+        "instagram": {
+          "type": "OBJECT",
+          "properties": {
+            "layoutSize": {
+              "type": "STRING",
+              "description": "value of persona.style.p8 provided"
+            },
+            "slideCount": {
+              "type": "NUMBER",
+              "description": "total count of hook and body and conslusion"
+            }
+          },
+          "required": [
+            "layoutSize",
+            "slideCount"
+          ]
+        }
+      },
+      "required": [
+        "threads",
+        "instagram"
+      ]
+    }
+  },
+  "required": [
+    "keyword",
+    "meta",
+    "outline",
+    "preValid"
+  ]
+}

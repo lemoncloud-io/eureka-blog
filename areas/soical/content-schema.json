@@ -1,0 +1,15 @@
+{
+  "type": "OBJECT",
+  "properties": {
+    "threads": {
+      "type": "STRING"
+    },
+    "instagram": {
+      "type": "STRING"
+    }
+  },
+  "required": [
+    "threads",
+    "instagram"
+  ]
+}
